@@ -1,8 +1,3 @@
-# Day 1 Task:
-# 	- Search books by:
-# 		- ISBN
-# 	- Display message if the input is empty or incorrect
-
 class Book
   attr_accessor :title, :author, :isbn, :count
   def initialize(title, author, isbn)
@@ -122,7 +117,7 @@ if __FILE__ == $0
         inventory.list_books
       when 2
         puts "Enter book title:"
-        title = gets.chomp0
+        title = gets.chomp
         puts "Enter book author:"
         author = gets.chomp
         puts "Enter book ISBN:"
