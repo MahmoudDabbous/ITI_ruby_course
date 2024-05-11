@@ -47,6 +47,9 @@ class Transaction
 end
 
 class Bank
+  def initialize()
+    raise "#{self.class} is an abstract class, Please use a subclass."
+  end
   def process_transactions(transactions, &callback)
     raise "#{self.class} has not implemented method '#{__method__}'"
   end
