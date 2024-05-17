@@ -1,13 +1,19 @@
 <h1><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
+<% if @article.image.attached? %>
+  <%= image_tag @article.image %>
+<% end %>
 
+<p><%= @article.body %></p>
 <ul>
+<% if( @article.user == current_user) %>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
   <li><%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
+<% end %>
+  <li><%= link_to "Report", report_article_path(@article), data: {turbo_method: :patch} %></li>
 </ul>
 
 <h2>Comments</h2>

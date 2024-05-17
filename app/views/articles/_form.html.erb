@@ -21,6 +21,14 @@
   </div>
 
   <div>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+    <% article.errors.full_messages_for(:image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
